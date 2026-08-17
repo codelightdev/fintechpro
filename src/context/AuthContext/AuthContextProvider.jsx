@@ -8,7 +8,7 @@ function AuthContextProvider(props) {
   
   const [currentUser, setCurrentUser] = useState(() => {
     const users = JSON.parse(localStorage.getItem("users")) || [];
-    return users.find((user) => user.isLoggedIn === true) || null;
+    return users.find((user) => user.isLoggedIn === true);
   });
 
   // Initialize formData directly using initial currentUser state (no useEffect needed)
