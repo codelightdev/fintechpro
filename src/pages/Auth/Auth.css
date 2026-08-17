@@ -1,0 +1,97 @@
+.auth-container {
+    width: 100%;
+    height: 100vh;
+    background: var(--secondary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.auth-container form {
+    width: 500px;
+    max-width: 100%;
+    height: auto;
+    padding: 20px;
+    background: var(--primary-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.16);
+    border-radius: 10px;
+}
+.auth-container form .auth-top {
+    margin: 20px auto;
+    text-align: center;
+}
+.auth-container form .auth-top h2 {
+    color: var(--fc-common);
+    font-size: 30px;
+    padding: 5px 0;
+}
+.auth-container form .auth-top p {
+    color: var(--fc-common);
+    font-size: 16px;
+    padding: 5px 0;
+    font-weight: 0;
+}
+.auth-container form .form-box {
+    width: 100%;
+    height: auto;
+    margin: 5px auto;
+}
+.auth-container form .form-box .form-field .box {
+    width: 100%;
+    height: auto;
+    margin: 5px 0;
+}
+.auth-container form .form-box .form-field .box label {
+    font-size: 20px;
+    color: var(--fc-sub-common);
+}
+.auth-container form .form-box .form-field .box input {
+    width: 100%;
+    height: auto;
+    padding: 12px 15px;
+    background: var(--primary-color);
+    border: 1px solid var(--border-clr);
+    margin: 10px 0;
+    border-radius: 5px;
+    font-family: var(--ff);
+    color: var(--fc-sub-common);
+}
+.auth-container form .form-box .form-btn {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    margin: 15px auto;
+}
+.auth-container form .form-box .form-btn button {
+    width: 100%;
+    height: auto;
+    padding: 13px 15px;
+    color: var(--primary-color);
+    text-align: center;
+    border-radius: 10px;
+    font-family: var(--ff);
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+}
+.auth-container form .form-box .form-btn button.login {
+    background: var(--btn-color);
+}
+.auth-container form .form-box .form-btn button.login:hover {
+    background: #112d93;
+}
+.auth-container form .form-box .form-btn button.register {
+    background: #058b3b;
+}
+.auth-container form .form-box .form-btn button.register:hover {
+    background: #05692d;
+}
+.auth-container form .oth {
+    text-align: center;
+    margin: 20px auto;
+}
+.auth-container form .oth p {
+    color: var(--fc-sub-common);
+    font-size: 18px;
+}
+.auth-container form .oth p a {
+    text-decoration: underline;
+}

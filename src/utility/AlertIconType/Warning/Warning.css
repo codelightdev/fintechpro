@@ -1,0 +1,29 @@
+.tri {
+    stroke-dasharray: 160;
+    stroke-dashoffset: 160;
+    stroke-width: 3;
+    stroke: #f59e0b;
+    stroke-linejoin: round;
+    fill: none;
+    animation: drawTri 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+.line-warn {
+    stroke-dasharray: 20;
+    stroke-dashoffset: 20;
+    stroke-width: 3.5;
+    stroke: #f59e0b;
+    stroke-linecap: round;
+    animation: drawTri 0.3s ease 0.5s forwards;
+}
+.dot-warn {
+    fill: #f59e0b;
+    transform: scale(0);
+    transform-origin: 26px 39px;
+    animation: pop 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.7s forwards;
+}
+@keyframes drawTri {
+    100% { stroke-dashoffset: 0; }
+}
+@keyframes pop {
+    100% { transform: scale(1); }
+}

@@ -1,0 +1,52 @@
+@import url('./view-transition.css');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  border: none;
+  outline: none;
+  transition: all .5s ease-in-out;
+}
+:root {
+    --primary-color: #fff;
+    --secondary-color: #F8F9FB;
+    --btn-bg-color: #DBEAFE;
+    --btn-color: #1E40B7;
+
+    --btn-clr-2: white;
+    --btn-bg-clr-2: black;
+
+    --ff: "Comic Neue", cursive;
+    --fs-heading: 2rem;
+    --fs-secondry-heading: 1.5rem;
+    --fs-body: 1rem;
+    --fs-small: 0.875rem;
+
+    --fc-common: black;
+    --fc-sub-common: #6B7280;
+
+    --border-clr: #E5E7EB;
+
+
+}
+
+.dark {
+    --primary-color: #1E293B;
+    --secondary-color: #0F172A;
+    --btn-bg-color: #334155;
+    --btn-color: #FACC15;
+
+    --btn-clr-2: black;
+    --btn-bg-clr-2: white;
+
+    --fc-common: #F1F5F9;
+    --fc-sub-common: #94A3B8;
+
+    --border-clr: #475569;
+}
+
+body {
+  font-family: var(--ff);
+}

@@ -1,0 +1,61 @@
+.profileupdateBox {
+    width: 100%;
+    height: auto;
+}
+.profileupdateBox .profileBox {
+    width: 600px;
+    max-width: 100%;
+    padding: 10px;
+    height: auto;
+    background: var(--primary-color);
+    border: 1px solid var(--border-clr);
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: inset 0 0 1px var(--fc-sub-common);
+}
+.profileupdateBox .profileBox .p-top {
+    margin: 10px 0;
+}
+.profileupdateBox .profileBox .p-top h2 {
+    font-size: 25px;
+    color: var(--fc-common);
+}
+.profileupdateBox .profileBox form {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+}
+.profileupdateBox .profileBox form .form-field {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.profileupdateBox .profileBox form .form-field .box {
+    margin: 10px 0;
+}
+.profileupdateBox .profileBox form .form-field .box label {
+    color: var(--fc-common);
+    font-size: 17px;
+}
+.profileupdateBox .profileBox form .form-field .box input,
+.profileupdateBox .profileBox form .form-field .box select {
+    width: 100%;
+    height: auto;
+    padding: 12px;
+    background: var(--secondary-color);
+    margin: 10px 0;
+    border: 1px solid var(--border-clr);
+    border-radius: 5px;
+    color: var(--fc-common);
+    font-size: 16px;
+}
+.profileupdateBox .profileBox form .p-btn button {
+    display: inline-block;
+    padding: 12px 20px;
+    background: var(--btn-bg-clr-2);
+    color: var(--primary-color);
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: var(--ff);
+}

@@ -1,0 +1,21 @@
+#panelSection {
+    width: calc(100% - 280px);
+    height: 100vh;
+    margin-left: 280px;
+    background: var(--secondary-color);
+    padding: 30px;
+}
+#panelSection .heading h2 {
+    font-size: 30px;
+    color: var(--fc-common);
+}
+#panlSection .heading p {
+    font-size: 15px;
+    color: var(--fc-sub-common);
+}
+@media (max-width: 650px) {
+    #panelSection {
+        width: 100%;
+        margin-left: 0;
+    }
+}
