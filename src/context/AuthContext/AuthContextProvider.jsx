@@ -11,16 +11,17 @@ function AuthContextProvider(props) {
     return users.find((user) => user.isLoggedIn === true) || null;
   });
 
-  const [formData, setFormData] = useState({
-    username: "",
+  // Initialize formData directly using initial currentUser state (no useEffect needed)
+  const [formData, setFormData] = useState(() => ({
+    username: currentUser?.username || "",
     password: "",
-    currency: "USD $",
-    modeToggle: false,
-  });
+    currency: currentUser?.currency || "USD $",
+    modeToggle: currentUser?.modeToggle || false,
+  }));
 
   const { showAlert } = useAlert();
 
-  const currencySymbol = currentUser.currency.split(' ')[1];
+  const currencySymbol = (currentUser?.currency || "USD $").split(" ")[1] || "$";;
 
   const navigate = useNavigate()
 
