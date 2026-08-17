@@ -14,9 +14,13 @@ function AuthContextProvider(props) {
   const [formData, setFormData] = useState({
     username: "",
     password: "",
+    currency: "USD $",
+    modeToggle: false,
   });
 
   const { showAlert } = useAlert();
+
+  const currencySymbol = currentUser.currency.split(' ')[1];
 
   const navigate = useNavigate()
 
@@ -68,6 +72,8 @@ function AuthContextProvider(props) {
         username: username,
         password: password,
         isLoggedIn: false,
+        currency: "USD $",
+        modeToggle: false,
       };
 
       users.push(newUser);
@@ -101,6 +107,62 @@ function AuthContextProvider(props) {
     }
   };
 
+  const updateProfile = (e) => {
+        e.preventDefault();
+        if (!currentUser) return;
+
+        const users = JSON.parse(localStorage.getItem("users")) || [];
+
+        // Fallback to currentUser values if the user leaves an input blank
+        const newUsername = formData.username.trim() || currentUser.username;
+        const newCurrency = formData.currency.trim() || currentUser.currency || "USD $";
+        const newPassword = formData.password.trim() || currentUser.password;
+
+        // 1. Password check: only enforce length IF they typed a new password
+        if (formData.password.trim() !== "" && formData.password.trim().length < 8) {
+            showAlert("Error", "New password must be at least 8 characters");
+            return;
+        }
+
+        // 2. Prevent duplicate username across other accounts
+        const isUsernameTaken = users.some(
+            (user) => user.id !== currentUser.id && user.username.toLowerCase() === newUsername.toLowerCase()
+        );
+        if (isUsernameTaken) {
+            showAlert("Error", "Username is already taken by another account");
+            return;
+        }
+
+        // 3. Check if anything actually changed
+        if (
+            newUsername === currentUser.username &&
+            newCurrency === currentUser.currency &&
+            newPassword === currentUser.password
+        ) {
+            showAlert("Warning", "No changes were made");
+            return;
+        }
+
+        // 4. Update the current user while preserving all other properties and users
+        const updatedUser = {
+            ...currentUser,
+            username: newUsername,
+            currency: newCurrency,
+            password: newPassword,
+        };
+
+        const updatedUsers = users.map((user) =>
+            user.id === currentUser.id ? updatedUser : user
+        );
+
+        localStorage.setItem("users", JSON.stringify(updatedUsers));
+        setCurrentUser(updatedUser);
+        
+        // Clear the password field for security after save
+        setFormData((prev) => ({ ...prev, password: "" }));
+        showAlert("Success", "Profile updated successfully!");
+    };
+
   const logout = () => {
     // 1. Update localStorage
     const users = JSON.parse(localStorage.getItem("users")) || [];
@@ -124,10 +186,12 @@ function AuthContextProvider(props) {
         currentUser,
         currentAuthState,
         formData,
+        currencySymbol,
         handleChange,
         handleSubmit,
         changeAuthState,
         logout,
+        updateProfile,
       }}
     >
       {props.children}

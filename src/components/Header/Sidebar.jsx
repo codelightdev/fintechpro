@@ -2,12 +2,14 @@ import { IoSettingsOutline } from "react-icons/io5"
 import { MdOutlineDashboard } from "react-icons/md"
 import { RiStackFill } from "react-icons/ri"
 import { NavLink } from "react-router-dom"
+import useHeader from "../../hooks/useHeader"
 
 
 function Sidebar() {
+  const { sideBarToggle } = useHeader()
   return (
     <>
-      <div className="sidebar">
+      <div className={`sidebar ${sideBarToggle && 'active'}`}>
         <div className="logo">
           <RiStackFill />
           <div className="logo-text">

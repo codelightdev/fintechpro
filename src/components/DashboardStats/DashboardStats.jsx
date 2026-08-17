@@ -1,5 +1,5 @@
 import { RiBankFill, RiErrorWarningLine, RiFileList3Line, RiMoneyDollarCircleLine } from 'react-icons/ri'
-function DashboardStats() {
+function DashboardStats(props) {
   return (
           <>
               <div className="stats">
@@ -9,7 +9,7 @@ function DashboardStats() {
                       </div>
                       <div className="stats-info">
                           <h4>Current Balance</h4>
-                          <h2>0$</h2>
+                          <h2>0{props.currencySymbol}</h2>
                       </div>
                   </div>
                   <div className="stats-box">
@@ -18,7 +18,7 @@ function DashboardStats() {
                       </div>
                       <div className="stats-info">
                           <h4>Total Income</h4>
-                          <h2>0$</h2>
+                          <h2>0{props.currencySymbol}</h2>
                       </div>
                   </div>
                   <div className="stats-box">
@@ -27,7 +27,7 @@ function DashboardStats() {
                       </div>
                       <div className="stats-info">
                           <h4>Total Expense</h4>
-                          <h2>0$</h2>
+                          <h2>0{props.currencySymbol}</h2>
                       </div>
                   </div>
                   <div className="stats-box">
@@ -36,7 +36,7 @@ function DashboardStats() {
                       </div>
                       <div className="stats-info">
                           <h4>Total Transaction</h4>
-                          <h2>0$</h2>
+                          <h2>0{props.currencySymbol}</h2>
                       </div>
                   </div>
               </div>

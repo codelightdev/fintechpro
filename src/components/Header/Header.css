@@ -56,8 +56,8 @@ header nav .nav-button {
     justify-content: space-between;
 }
 header nav .nav-button .navbtn {
-    width: 35px;
-    height: 35px;
+    width: 38px;
+    height: 38px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -67,6 +67,7 @@ header nav .nav-button .navbtn {
 }
 header nav .nav-button .navbtn svg {
     color: var(--fc-common);
+    font-size: 24px;
 }
 .sidebar {
     position: fixed;
@@ -129,6 +130,9 @@ header nav .nav-button .navbtn svg {
 @media (max-width: 650px) {
     .sidebar {
         left: -280px;
+    }
+    .sidebar.active {
+        left: 0;
     }
     header nav .logo h3 {
         font-size: 20px;

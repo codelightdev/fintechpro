@@ -1,6 +1,8 @@
 import './Dashboard.css'
 import DashboardStats from '../../components/DashboardStats/DashboardStats'
+import useAuth from '../../hooks/useAuth'
 function Dashboard() {
+    const { currencySymbol } = useAuth();
   return (
     <>
         <div className="dashboard">
@@ -8,7 +10,7 @@ function Dashboard() {
                 <h2>Financial Overview</h2>
                 <p>Real-time tracking application</p>
             </div>
-            <DashboardStats />
+            <DashboardStats currencySymbol={currencySymbol}/>
         </div>
     </>
   )

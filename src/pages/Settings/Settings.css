@@ -59,3 +59,9 @@
     font-size: 16px;
     font-family: var(--ff);
 }
+@media (max-width: 931px) {
+    .profileupdateBox .profileBox form .form-field .box {
+        width: 100%;
+        margin: 10px 0;
+    }
+}
